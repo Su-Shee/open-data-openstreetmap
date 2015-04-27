@@ -1,0 +1,45 @@
+This directory contains the code to handle Open Street
+Map, Leaflet, OpenLayers und Postgresql/PostGIS plus CouchDB with
+GeoCouch.
+
+A very short installation gist is available here:
+
+https://gist.github.com/Su-Shee/5482142
+https://gist.github.com/Su-Shee/5501593
+
+
+A couple of additional R modules are required - install as usal on R's
+shell:
+
+install.packages('ggmap')
+install.packages('mapproj')
+
+and just call the resulting plot.
+
+The Leaflet example can be opened in your browser; all JavaScript
+libraries are served via their CDN (LeafLet, Open Street Map API)
+
+To import OSM data into GeoCouch you also need this Ruby gem:
+
+gem install shp2geocouch
+
+and this OSM-to-PostGIS tool:
+
+https://github.com/openstreetmap/osm2pgsql
+
+The directory preprocessing/cleanups contains a Perl and Python script
+to clean up the data and to poll Open Street Map's API.
+
+THE RESULT IS ALREADY AVAILABLE AS JSON AND CSV!
+
+You don't have to poll the API all over again.
+
+In addition, you should install two Perl modules:
+
+cpan WWW::Mechanize
+cpan URI::Escape
+
+and its Python sister:
+
+pip install requests
+

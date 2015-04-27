@@ -1,0 +1,39 @@
+1) make sure you actually HAVE postgres AND postgis AND plsql!
+
+2) enable postgis extension (may be in a different path or already coming from your distribution)
+
+psql -U YOURUSER -d YOURDB -f /usr/share/postgresql/contrib/postgis-2.0/postgis.sql
+
+or, on psql shell:
+
+CREATE extension postgis;
+
+3) download appropriate OSM data - start with something small!
+
+http://downloads.cloudmade.com/
+
+4) install osm2psql - it comes with some important files
+
+5) activate "some stuff" (no idea so far why I need this ;)
+
+psql -U YOURUSER -d YOURDB -f /usr/share/osm2pgsql/900913.sql
+
+6) if needed, edit default.style FIRST - it doesn't include e.g. "addr:city" by default, then slurp in:
+
+osm2pgsql -U YOURUSER -d YOURDB -s -S /usr/share/osm2pgsql/default.style YOURDATA.osm
+
+7) on your preferred psql do:
+
+select name, osm_id, st_astext(way) from planet_osm_line where name='YOURSTREET';
+
+8) SUCCESS :) \o/ example output for one of the many Königstraßes.. ;)
+
+Königstraße |  26343124 | LINESTRING(1463605.63 6876119.23,1463603.76 6876106.57)
+
+9) You find the postgis related postgres functions via
+
+\df st_ <TAB> on your psql shell - gives me 229. ;)
+
+Cheatsheets and docs: http://postgis.net/documentation/
+
+
