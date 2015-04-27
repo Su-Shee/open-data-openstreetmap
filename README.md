@@ -6,4 +6,4 @@ Open Street Map. Examples in R, Python, Perl, JavaScript. Uses PostGIS and GeoCo
 
 ### Example:
 
-![Example:](https://raw.github.com/Su-Shee/open-data-berlin-openstreetmap/master/public-wlan-berlin.png)
+![Example:](https://raw.github.com/Su-Shee/open-data-openstreetmap/master/public-wlan-berlin.png)
